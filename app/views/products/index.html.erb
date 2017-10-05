@@ -28,6 +28,19 @@
   </tbody>
 </table>
 
-<br>
+<br/>
 
 <%= link_to 'New Product', new_product_path %>
+
+<br/><br/>
+
+<!-- <% chunky = 'Chunky Bacon' %>
+<% chunky_array = Array.new(100, chunky) %>
+<% chunky_array.each do |i| %>
+<br><font color="red"><i><%= i %></i></font></br>
+<% end %> -->
+
+<% i = 'Chunky Bacon' %>
+<% 100.times do i %>
+<br><font color="blue"><b><%= i %></b></font></br>
+<% end %>

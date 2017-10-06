@@ -34,13 +34,29 @@
 
 <br/><br/>
 
-<!-- <% chunky = 'Chunky Bacon' %>
+<!--Initialize a variable to hold the total for prices and number of products.-->
+<% total_price = 0 %>
+<% total_quantity = 0 %>
+
+<!--Unique products in the db table.-->
+<% products_uni = @products.all.uniq do |i| i.name end %>
+<p>The number of unique products in this DB is: <b><%= products_uni.count %></b><p>
+
+<!--Average price of products in the DB table.-->
+<% @products.each do |i| total_price += i.price end%>
+<p>The total average price of products comes to: <b><%= total_price/@products.count %></b></p>
+
+<!--The total quantity of all quantities.-->
+<% @products.each do |i| total_quantity += i.stock_quantity end%>
+<p>The total number of products, quantityt: <b><u><%= total_quantity %></u></b></p>
+
+<!--2 ways to get chunky bacon 100 times.-->
+<% chunky = 'Chunky Bacon' %>
 <% chunky_array = Array.new(100, chunky) %>
 <% chunky_array.each do |i| %>
 <br><font color="red"><i><%= i %></i></font></br>
-<% end %> -->
-
-<% i = 'Chunky Bacon' %>
+<% end %>
+<!-- <% i = 'Chunky Bacon' %>
 <% 100.times do i %>
 <br><font color="blue"><b><%= i %></b></font></br>
-<% end %>
+<% end %> -->
